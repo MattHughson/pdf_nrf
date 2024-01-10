@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) demo project rendering a PDF on the fly while content editors change content into Storyblok.
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository, you can use the git client or the GitHub command line tool:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```shell
+gh repo clone roberto-butti/storyblok-pdf-productsheet
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Enter into the directory created:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```shell
+cd storyblok-pdf-productsheet
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install the packages:
 
-## Learn More
+```shell
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Create localhost self-signed certificates:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```shell
+mkcert localhost
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Run the local SSL proxy:
 
-## Deploy on Vercel
+```shell
+local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem
+```
+The command opens port 3010 with HTTPS protocol and forwards the requests to 3000.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+In another terminal, run  the local web server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```shell
+npm run dev
+```
+The webserver opens port 3000 with HTTP protocol.
+
+Now via the web browser, you can open the page https://localhost:3010/pdf
