@@ -3,9 +3,9 @@ import StoryblokStory from "@storyblok/react/story";
 
 
 
-export default async function Home() {
-  const { data } =  await fetchData();
-  console.log("rendering home")
+export default async function Pdf() {
+  const { data } = await fetchData();
+  console.log("rendering pdf")
   return (
     <div>
       <StoryblokStory story={data.story} />
@@ -20,5 +20,5 @@ export async function fetchData() {
   };
 
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/home`, sbParams);
+  return storyblokApi.get(`cdn/stories/pdf`, sbParams);
 }
