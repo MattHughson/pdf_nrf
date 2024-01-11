@@ -104,7 +104,7 @@ const PagePdf = ({ blok }) => (
       </Text>
 
         {blok.table.tbody.map(function(object, i){
-        return <View style={styles.table}>
+        return <View key={styles.tabletitle} style={styles.table}>
           <View style={styles.tabletitle}>
           <Text>{object.body[0].value}</Text>
         </View><View style={styles.tablevalue}>
