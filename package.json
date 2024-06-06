@@ -11,16 +11,17 @@
   "dependencies": {
     "@react-pdf/renderer": "^3.1.14",
     "@storyblok/react": "^3.0.0",
-    "next": "14.0.4",
+    "next": "^14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-pdf-tailwind": "^2.3.0",
     "storyblok-rich-text-react-renderer": "^2.9.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
     "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
   }
 }

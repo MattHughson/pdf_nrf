@@ -8,13 +8,16 @@ import Teaser from "./Teaser";
 import Feature from "./Feature";
 import Grid from "./Grid";
 import PagePdf from "./PagePdf";
+import FundPDF from "./FundPDF";
 
 const components = {
     feature: Feature,
     grid: Grid,
     teaser: Teaser,
     page: Page,
-    page_pdf: PagePdf
+    page_pdf: PagePdf,
+    Fund_pdf: FundPDF,
+
 };
 /** 2. Initialize it as usual */
 storyblokInit({
@@ -25,5 +28,6 @@ storyblokInit({
 console.log("Storyblok provider")
 
 export default function StoryblokProvider({ children }) {
+    
     return children;
 }
