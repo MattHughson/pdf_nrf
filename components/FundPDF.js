@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
   },
-  headerText: tw('text-green text-3xl'),  // Adjust font size if necessary
-  mainText: tw('text-green text-lg mb-2'),
+  headerText: tw('text-white text-3xl'),  // Adjust font size if necessary
+  mainText: tw('text-white text-lg mb-2'),
   priceText: tw('text-red text-2xl mb-3'),
   footerText: tw('text-green text-xs mb-1'),
   linkText: tw('text-red text-xs mb-1'),
@@ -67,9 +67,7 @@ const FundPDF = ({ blok }) => (
           <Text style={styles.headerText}>{blok.headingtwo}</Text>
           <Text style={styles.mainText}>{blok.tagline}</Text>
           <Text style={styles.priceText}>{blok.price}</Text>
-          <Text style={styles.footerText}>Organized by Kin Canada - Kinsmen Club of Fonthill & District</Text>
-          <Text style={styles.footerText}>Sponsored by Salumatics</Text>
-          <Text style={styles.linkText}>Preorder Now: www.fonthillkinsmen.ca</Text>
+
         </View>
       </PageWrapper>
     </Document>
